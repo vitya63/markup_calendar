@@ -23,10 +23,6 @@ body {
         transition: background-color 0.5s, transform 0.5s;
     }
 
-    div:first-child {
-        grid-column-start: 7;
-    }
-
     div:hover {
         background-color: pink;
         transform: translate(0, -20px);
@@ -41,5 +37,63 @@ body {
             text-align: center;
             line-height: 100px;
         }
+    }
+}
+
+.calendar-30 {
+    div:last-child {
+        display: none;
+    }
+}
+
+.calendar-29 {
+    @extend .calendar-30;
+
+    div:nth-last-child(2) {
+        display: none;
+    }
+}
+
+.calendar-28 {
+    @extend .calendar-29;
+
+    div:nth-last-child(3) {
+        display: none;
+    }
+}
+
+.calendar-tue {
+    div:first-child {
+        grid-column-start: 2;
+    }
+}
+
+.calendar-wed {
+    div:first-child {
+        grid-column-start: 3;
+    }
+}
+
+.calendar-thu {
+    div:first-child {
+        grid-column-start: 4;
+    }
+}
+
+.calendar-fri {
+    div:first-child {
+        grid-column-start: 5;
+    }
+}
+
+.calendar-sat {
+    div:first-child {
+        grid-column-start: 6;
+    }
+}
+
+.calendar-sun {
+    div:first-child {
+        grid-column-start: 7;
     }
 }
