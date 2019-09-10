@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.calendar {
+    display: grid;
+    width: 706px;
+    height: 605px;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(6, 100px);
+    grid-gap: 1px;
+    margin: auto;
+
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+        border: 1px solid black;
+        box-sizing: border-box;
+        transition: background-color 0.5s, transform 0.5s;
+    }
+
+    div:first-child {
+        grid-column-start: 7;
+    }
+
+    div:hover {
+        background-color: pink;
+        transform: translate(0, -20px);
+        cursor: pointer;
+    }
+
+    @for $i from 1 through 31 {
+        div:nth-child(#{$i})::after {
+            content: "#{$i}";
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+    }
+}
