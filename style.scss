@@ -40,60 +40,17 @@ body {
     }
 }
 
-.calendar-30 {
-    div:last-child {
+@for $i from 28 through 31 {
+    .calendar-#{$i} > div:nth-child(#{$i}) ~ div {
         display: none;
     }
 }
 
-.calendar-29 {
-    @extend .calendar-30;
-
-    div:nth-last-child(2) {
-        display: none;
+$week: ("mon", "tue", "wed", "thu", "fri", "sat", "sun");
+$i: 1;
+@each $day in $week {
+    .calendar-#{$day} > div:first-child {
+        grid-column-start: $i;
     }
-}
-
-.calendar-28 {
-    @extend .calendar-29;
-
-    div:nth-last-child(3) {
-        display: none;
-    }
-}
-
-.calendar-tue {
-    div:first-child {
-        grid-column-start: 2;
-    }
-}
-
-.calendar-wed {
-    div:first-child {
-        grid-column-start: 3;
-    }
-}
-
-.calendar-thu {
-    div:first-child {
-        grid-column-start: 4;
-    }
-}
-
-.calendar-fri {
-    div:first-child {
-        grid-column-start: 5;
-    }
-}
-
-.calendar-sat {
-    div:first-child {
-        grid-column-start: 6;
-    }
-}
-
-.calendar-sun {
-    div:first-child {
-        grid-column-start: 7;
-    }
+    $i: $i + 1;
 }

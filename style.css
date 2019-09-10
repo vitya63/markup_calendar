@@ -245,39 +245,47 @@ body {
   line-height: 100px;
 }
 
-.calendar-30 div:last-child, .calendar-29 div:last-child, .calendar-28 div:last-child {
+.calendar-28 > div:nth-child(28) ~ div {
   display: none;
 }
 
-.calendar-29 div:nth-last-child(2), .calendar-28 div:nth-last-child(2) {
+.calendar-29 > div:nth-child(29) ~ div {
   display: none;
 }
 
-.calendar-28 div:nth-last-child(3) {
+.calendar-30 > div:nth-child(30) ~ div {
   display: none;
 }
 
-.calendar-tue div:first-child {
+.calendar-31 > div:nth-child(31) ~ div {
+  display: none;
+}
+
+.calendar-mon > div:first-child {
+  grid-column-start: 1;
+}
+
+.calendar-tue > div:first-child {
   grid-column-start: 2;
 }
 
-.calendar-wed div:first-child {
+.calendar-wed > div:first-child {
   grid-column-start: 3;
 }
 
-.calendar-thu div:first-child {
+.calendar-thu > div:first-child {
   grid-column-start: 4;
 }
 
-.calendar-fri div:first-child {
+.calendar-fri > div:first-child {
   grid-column-start: 5;
 }
 
-.calendar-sat div:first-child {
+.calendar-sat > div:first-child {
   grid-column-start: 6;
 }
 
-.calendar-sun div:first-child {
+.calendar-sun > div:first-child {
   grid-column-start: 7;
 }
 
