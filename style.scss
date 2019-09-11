@@ -13,6 +13,7 @@ body {
     grid-gap: 1px;
     margin: auto;
     padding-top: 20px;
+    text-align: center;
 
     div {
         width: 100px;
@@ -32,9 +33,6 @@ body {
     @for $i from 1 through 31 {
         div:nth-child(#{$i})::after {
             content: "#{$i}";
-            display: inline-block;
-            width: 100px;
-            text-align: center;
             line-height: 100px;
         }
     }
